@@ -1,0 +1,44 @@
+\version "2.22.2" 
+\header {
+title = "sdljkjkfn"
+composer = "adflkn"
+}
+\score {\new PianoStaff \with { instrumentName = "Piano" }
+ <<
+\new Staff \relative g'{
+\clef treble
+\key c \major
+\time 3/4
+\tempo 4 = 130
+\partial 1
+ g8 g 
+  a4  g c 
+  b2 g8 g 
+  a4  g d' 
+  c2 g8 g 
+  g'4  e c 
+  b a2 
+  f'8 f e4  c 
+  d c2~ 
+  c2. 
+ \bar "|."}
+ <<
+\new Staff \relative {
+\clef bass
+\key c \major
+\chordmode { c,4 
+ c,4 c,4 c,4 
+ g,2 g,4 
+ c,4 g,4 g,4 
+ c,2 c,4 
+ c,4 c,4 c,4 
+ g,4 c,2 
+ f,4 c,4 c,4 
+ f,4 c,2~ 
+ c,2. 
+}}
+>>
+ >>
+\layout {}
+\midi {}
+}
