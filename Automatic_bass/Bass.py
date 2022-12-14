@@ -1,9 +1,29 @@
 from Translator_py_ly.dictionaries import *
+from Translator_py_ly.translator import key_ly
 from Music_Theory.Chords import chord, interval
 from Music_Theory.Scales_and_modes import M_scale, m_scale, key_scale, M_scale_intervals, m_scale_intervals, acc_notes
 from numpy import zeros, array, size, amax, argmax, delete, multiply
 import copy
 
+def autobass(melody_py, reference, key_signature):           
+    
+    bass_ly = melody_bass_translate(melody_py, key_signature)
+
+    start_bass = ["\n <<",
+                  "\\new Staff \\relative " + "{",
+                  "\\clef bass",
+                  "\\key " + key_ly(key_signature)[0] + " \\" + key_ly(key_signature)[1],
+                  "\\chordmode " + "{"]
+
+    finish_bass = [ "\n" + "}" + "}",
+                   ">>"]
+                  
+    with open("prueba.txt", "a") as f:
+        f.write('\n'.join(start_bass))
+        f.write('\n'.join(bass_ly))
+        f.write('\n'.join(finish_bass))
+
+    return 
 
 def melody_bass_translate(melody_py, key):
 
