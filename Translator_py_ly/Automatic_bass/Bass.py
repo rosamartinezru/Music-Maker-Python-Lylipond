@@ -8,18 +8,27 @@ import copy
 
 def melody_bass_translate(melody_py, key):
 
-    n_staff = melody_py.count("|")-1                         # Total bars
-    d_start = 0                                              # Start coordinate of the bar
-    chords = " "                                                                                                  # All bar notes
+    """
+    melody_bass_translate Calls step by step the automatic bass formation
+
+    :param melody_py: Input melody in python language
+    :param key: Input key-signature
+    :return: The generated bass in lylipond language, ready to be written into the .txt
+
+    """
+
+    n_staff = melody_py.count("|")-1                       
+    d_start = 0                                              
+    chords = " "                                                                                                
     chord_ly= [str(" ")]*n_staff
     last_saved = 0
    
 
     for n in range(n_staff):
 
-        d_final = melody_py.find("|", d_start, len(melody_py) - 1)              # Final coordinate of the bar
+        d_final = melody_py.find("|", d_start, len(melody_py) - 1)            
         bar = melody_py[d_start:d_final] 
-        d_start = d_final + 2                                                      # Initial coordinate for the next bar
+        d_start = d_final + 2                                                      
 
         staff_note = staff_notes(bar)
         bass_chord = select_chord(staff_note, key, "First", None ) 
@@ -68,7 +77,7 @@ def select_chord(staff_notes, key, other, out_note):
     if accidental_notes[len(accidental_notes)-1].isupper() == False:
         for i in range(4):
             for j in range(3):
-                if len(primary_matrix[i][j])==2 and accidental_notes[len(accidental_notes)-1] not in primary_matrix[i][j]:
+                if len(primary_matrix[i][j])==2 and primary_matrix[i][j] not in accidental_notes:
                     primary_matrix[i][j] = interval("Change", primary_matrix[i][j])
 
     counter_chord = zeros([4,1])
