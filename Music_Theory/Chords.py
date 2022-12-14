@@ -77,3 +77,34 @@ def interval(inter, base_note):
         result_note = (str(key_list[val_list.index(new_note)]))
 
     return result_note
+
+
+def primary_chord(key):        
+
+    """
+    primary_chord Makes the first, third, fourth and fifth chord of the input key-signature
+
+    :param key: Input key-signature
+    :return: Lists with chord notes
+
+    """
+    if key[len(key)-1] == "M":
+        scale_mode = M_scale
+        interval_mode = M_scale_intervals
+    else:
+        scale_mode = m_scale
+        interval_mode = m_scale_intervals
+
+    if len(key) ==2:     
+        first = chord(key[0], scale_mode[0])
+        third = chord(interval(interval_mode[1], key[0]), scale_mode[2])
+        fourth = chord(interval(interval_mode[2], key[0]), scale_mode[3])
+        fifth = chord(interval(interval_mode[3], key[0]), scale_mode[4])
+
+    else:
+        first = chord(key[0:2], scale_mode[0])
+        third = chord(interval(interval_mode[1], key[0:2]), scale_mode[2])
+        fourth = chord(interval(interval_mode[2], key[0:2]), scale_mode[3])
+        fifth = chord(interval(interval_mode[3], key[0:2]), scale_mode[4])
+
+    return first, third, fourth, fifth
