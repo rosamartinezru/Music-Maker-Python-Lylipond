@@ -10,7 +10,7 @@ def compile_PDF():
     with open("prueba.txt", "a") as f:
         f.write('\n'.join(finish))
 
-    path_to_Lylipond = "D:\\Program Files\\LilyPond\\usr\\bin\\lilypond.exe"
-    path_to_file = "D:\\Descargas\\Aeroespecial\\MUSE 1\\Matematicas\\Programacion\\Programas\\Music Maker\\prueba.txt"
+    path_to_Lylipond = "C:\\Program Files (x86)\\LilyPond\\usr\\bin\\lilypond.exe"
+    path_to_file = "C:\\Users\\rosam\\OneDrive\\Escritorio\\Music-Maker-Python-Lylipond-tomas\\prueba.txt"
     
     return subprocess.call([path_to_Lylipond,path_to_file])
