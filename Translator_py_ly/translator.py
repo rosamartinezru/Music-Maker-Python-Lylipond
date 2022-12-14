@@ -2,7 +2,20 @@
 
 from Translator_py_ly.dictionaries import *
 from Music_Theory.Scales_and_modes import acc_notes
+from Decorators.Decorators import decorator_octava
 
+def start_translator(melody_py, reference, key_signature):          # Melody translation
+
+    melody_ly = melody_translate(melody_py, reference, key_signature)
+    #melody_ly_decorated = decorator_octava(melody_ly)
+    finish_staff = ["\n \\bar \"|.\"}"]
+
+    with open("prueba.txt", "a") as f:
+        #f.write('\n'.join(melody_ly_decorated))
+        f.write('\n'.join(melody_ly))
+        f.write('\n'.join(finish_staff))
+
+    return
 
 def melody_translate(melody_py, reference, key_signature):
 

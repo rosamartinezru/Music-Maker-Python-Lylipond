@@ -1,5 +1,4 @@
 
-
 # Numerical correspondence of notes and intervals
 
 notes = {"C":0, "D":2,  "E":4, "F":5,  "G":7,  "A":9, "B":11, "C#":1, "D#":3,  "F#":6,  "G#":8,  "A#":10, "Db":1, "Eb":3, "Gb":6, "Ab":8, "Bb":10}
@@ -78,5 +77,3 @@ def interval(inter, base_note):
         result_note = (str(key_list[val_list.index(new_note)]))
 
     return result_note
-
-
