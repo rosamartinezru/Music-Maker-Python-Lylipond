@@ -1,9 +1,9 @@
 \version "2.22.2" 
 \header {
-title = "wkdjhf"
-composer = "asdlfkn"
+title = "cvmzn"
+composer = "xvlm,n"
 }
-\score {\new PianoStaff \with { instrumentName = "iano" }
+\score {\new PianoStaff \with { instrumentName = "Piano" }
  <<
 \new Staff \relative c''{
 \clef treble

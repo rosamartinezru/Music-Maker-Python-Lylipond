@@ -1,4 +1,5 @@
 
+
 # Numerical correspondence of notes and intervals
 
 notes = {"C":0, "D":2,  "E":4, "F":5,  "G":7,  "A":9, "B":11, "C#":1, "D#":3,  "F#":6,  "G#":8,  "A#":10, "Db":1, "Eb":3, "Gb":6, "Ab":8, "Bb":10}
@@ -79,32 +80,3 @@ def interval(inter, base_note):
     return result_note
 
 
-def primary_chord(key):        
-
-    """
-    primary_chord Makes the first, third, fourth and fifth chord of the input key-signature
-
-    :param key: Input key-signature
-    :return: Lists with chord notes
-
-    """
-    if key[len(key)-1] == "M":
-        scale_mode = M_scale
-        interval_mode = M_scale_intervals
-    else:
-        scale_mode = m_scale
-        interval_mode = m_scale_intervals
-
-    if len(key) ==2:     
-        first = chord(key[0], scale_mode[0])
-        third = chord(interval(interval_mode[1], key[0]), scale_mode[2])
-        fourth = chord(interval(interval_mode[2], key[0]), scale_mode[3])
-        fifth = chord(interval(interval_mode[3], key[0]), scale_mode[4])
-
-    else:
-        first = chord(key[0:2], scale_mode[0])
-        third = chord(interval(interval_mode[1], key[0:2]), scale_mode[2])
-        fourth = chord(interval(interval_mode[2], key[0:2]), scale_mode[3])
-        fifth = chord(interval(interval_mode[3], key[0:2]), scale_mode[4])
-
-    return first, third, fourth, fifth
