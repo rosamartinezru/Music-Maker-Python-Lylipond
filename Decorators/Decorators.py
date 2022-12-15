@@ -17,7 +17,7 @@ def decorator_octava(melody_ly):     # Coge nota p.e. a4 y saca <a4 a4'>
             if bar[i] != " ":                   # detecta el primer caracter que no es un espacio
                 j = bar.find(" ",i,len(bar))    # CALCULAR posicion del siguiente espacio
                 first_note = bar[i:j]           # primera nota = cosas entre 2 espacios p.e cis'4
-                if first_note[0] != r:
+                if first_note[0] != "r":
                    for m in first_note:  
                        if m == "'":
                            mPos = first_note.find("'")
