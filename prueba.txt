@@ -1,0 +1,52 @@
+\version "2.22.2" 
+\header {
+title = "Viva la vida minor"
+composer = "dakns"
+}
+\score {\new PianoStaff \with { instrumentName = "Piano" }
+ <<
+\new Staff \relative c''{
+\clef treble
+\key aes \minor
+\time 4/4
+\tempo 4 = 130
+\partial 0
+ r4  r8  ces8  ces4  ces 
+  ces2. des8  bes8 ~  
+  bes2 r8  bes4  aes8  
+  bes4  bes8 aes ces4  ees,8  fes8 ~  
+  fes8 ces' ces8 ces ces8 ces ces4  
+  ces2. des8  bes8 ~  
+  bes2 r8  bes4  aes8  
+  bes4  bes bes ces8  aes8 ~  
+  aes8  fes4 .  r2 
+  r2 r4  r8  ees'8  
+  fes4  fes fes8 ees fes8  ees8 ~  
+  ees4  bes8  ces4  des4 .  
+  ees4  ees ees8 ces ees8  ces8 ~  
+  ces4  fes,8  ges4  aes4 .  
+ \bar "|."}
+ <<
+\new Staff \relative {
+\clef bass
+\key aes \minor
+\chordmode { r4 r8 aes,8:m aes,4:m aes,4:m 
+ ees,2.:m des,8:m ees,8:m~ 
+ ees,2:m r8 ees,4:m aes,8:m 
+ ees,4:m ees,4:m ees,4:m ees,8:m aes,8:m~ 
+ aes,4:m aes,4:m aes,4:m aes,4:m 
+ ees,2.:m des,8:m ees,8:m~ 
+ ees,2:m r8 ees,4:m aes,8:m 
+ ees,4:m ees,4:m ees,4:m ees,8:m aes,8:m~ 
+ aes,8:m aes,4.:m r2 
+ r2 r4 r8 aes,8:m 
+ aes,4:m aes,4:m aes,4:m aes,8:m aes,8:m~ 
+ ees,4:m ees,8:m ees,4:m des,4.:m 
+ aes,4:m aes,4:m aes,4:m aes,8:m aes,8:m~ 
+ aes,4:m aes,8:m des,4:m aes,4.:m 
+}}
+>>
+ >>
+\layout {}
+\midi {}
+}

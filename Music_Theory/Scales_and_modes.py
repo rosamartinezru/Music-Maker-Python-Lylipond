@@ -49,7 +49,10 @@ def key_scale(note, mode):
     for i in range(1,7):
         scale[i]= interval(inter_mode[i-1], note)
 
-        if i>0 and scale[i][0] == scale[i-1][0]: # It changes between unison notes to make the scale more understandable [D# --> Eb or viceversa]
+        if i>0 and scale[i][0] == scale[i-1][0] : # It changes between unison notes to make the scale more understandable [D# --> Eb or viceversa]
+            scale[i] = interval("Change", scale[i])
+            figure = scale[i][1]
+        elif len(scale[i])==2 and figure != scale[i][1]:
             scale[i] = interval("Change", scale[i])
 
     return scale
@@ -71,11 +74,18 @@ def acc_notes(key_signature):
     [number_acc, type_acc] = key_sig[key_signature]
 
     if type_acc == "#":
-         key_acc_notes = fifths_cycle[0:number_acc]
-         key_acc_notes += "#"
+        key_acc_notes = fifths_cycle[0:number_acc]
+        key_acc_notes += "#"
+
     else:
-         key_acc_notes = fifths_cycle[len(fifths_cycle)-1:len(fifths_cycle)-number_acc -1:-1]
-         key_acc_notes += "b"
+        if number_acc != 7:
+            key_acc_notes = fifths_cycle[len(fifths_cycle)-1:len(fifths_cycle)-number_acc -1:-1]
+            key_acc_notes += "b"
+        else:
+            key_acc_notes = fifths_cycle[len(fifths_cycle)-1:0:-1]
+            key_acc_notes += "F"
+            key_acc_notes += "b"
+
      
     return key_acc_notes
 
