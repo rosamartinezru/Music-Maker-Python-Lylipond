@@ -1,6 +1,6 @@
 ## ACTIVE TRANSLATOR
 
-from Translator_py_ly.dictionaries import *
+from Translator_py_ly.dictionaries_lily import pitchly, rythm, rythm_special, octaves, acc_ly, mode_ly
 from Music_Theory.Scales_and_modes import acc_notes
 
 def translator(melody_py, reference, key_signature):          # Melody translation
@@ -8,7 +8,7 @@ def translator(melody_py, reference, key_signature):          # Melody translati
     melody_ly = melody_translate(melody_py, reference, key_signature)
     finish_staff = ["\n \\bar \"|.\"}"]
 
-    translated_melody = ['\n'.join(melody_ly), finish_staff]
+    translated_melody = melody_ly + finish_staff
 
     return translated_melody
 

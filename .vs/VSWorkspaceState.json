@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Automatic_bass",
     "\\Decorators",
+    "\\Music_Theory",
     "\\Translator_py_ly"
   ],
-  "SelectedNode": "\\finalize.py",
   "PreviewInSolutionExplorer": false
 }

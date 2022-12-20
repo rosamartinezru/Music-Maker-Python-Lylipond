@@ -1,4 +1,4 @@
-from Music_Theory.Chords import interval
+from Music_Theory.Intervals import interval
 
 # Major and minor chord modes and intervals between scale notes
 

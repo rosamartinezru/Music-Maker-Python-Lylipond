@@ -1,9 +1,8 @@
 #from GUI.gui import GUI
-from initialize import initialize_sheet, melody_start
 from Translator_py_ly.translator import translator
 from Automatic_bass.Bass import autobass
 from Adornments.adornments import adorn_all_octaves
-from finalize import compile_PDF
+from sheet_generator import compile_PDF, header
 
 ## Happy Birthday
 
@@ -20,16 +19,14 @@ melody = "R_ R- C- C_ C | C__. D- B-^ | B__ R- B_ A- | B_ B-A C_ E4- F-^ | F-C5 
 
 # reference, key_signature, melody = GUI()
 
-sheet_start = initialize_sheet()
-
-melody_start = melody_start(reference, key_signature)
+sheet_start, melody_start = header(reference, key_signature)
 
 melody_ly = translator(melody, reference, key_signature)
 
-bass = autobass(melody, reference, key_signature)
-
 decorated_melody = adorn_all_octaves(melody_ly)
 
-full_text = sheet_start + melody_start + decorated_melody + bass
+bass = autobass(melody, reference, key_signature)
 
-compile_PDF(full_text)
+full_txt_sheet = [sheet_start, melody_start, melody_ly, bass]
+
+compile_PDF(full_txt_sheet)

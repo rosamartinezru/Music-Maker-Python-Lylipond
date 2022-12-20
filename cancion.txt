@@ -1,0 +1,55 @@
+\version "2.22.2" 
+\header {
+title = "slfkjgl"
+composer = "skdjfgh"
+}
+\score {\new PianoStaff \with { instrumentName = "Piano" }
+ <<
+\new Staff \relative c''{
+\clef treble
+\key aes \major
+\time 4/4
+\tempo 4 = 120
+\partial 0
+ r4  r8  c8  c4  c 
+  c2. des8  bes8 ~  
+  bes2 r8  bes4  aes8  
+  bes4  bes8 aes c4  ees,8  f8 ~  
+  f8 c' c8 c c8 c c4  
+  c2. des8  bes8 ~  
+  bes2 r8  bes4  aes8  
+  bes4  bes bes c8  aes8 ~  
+  aes8  f4 .  r2 
+  r2 r4  r8  ees'8  
+  f4  f f8 ees f8  ees8 ~  
+  ees4  bes8  c4  des4 .  
+  ees4  ees ees8 c ees8  c8 ~  
+  c4  f,8  g4  aes4 .  
+
+ \bar "|."}
+ <<
+\new Staff \relative {
+\clef bass
+\key aes \major
+\chordmode {
+ r4 r8 aes,8 aes,4 aes,4 
+ aes,2. des,8 des,8~ 
+ ees,2 r8 ees,4 aes,8 
+ ees,4 ees,4 ees,4 ees,8 aes,8~ 
+ aes,4 aes,4 aes,4 aes,4 
+ aes,2. des,8 des,8~ 
+ ees,2 r8 ees,4 aes,8 
+ ees,4 ees,4 ees,4 ees,8 aes,8~ 
+ aes,8 aes,4. r2 
+ r2 r4 r8 aes,8 
+ des,4 des,4 des,4 des,8 aes,8~ 
+ aes,4 des,8 aes,4 des,4. 
+ aes,4 aes,4 aes,4 aes,8 aes,8~ 
+ aes,4 aes,8 des,4 aes,4. 
+
+}}
+>>
+ >>
+\layout {}
+\midi {}
+}

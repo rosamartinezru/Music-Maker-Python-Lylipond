@@ -1,6 +1,7 @@
-from Translator_py_ly.dictionaries import *
+from Translator_py_ly.dictionaries_lily import pitchly, rythm, rythm_special, octaves, acc_ly, mode_ly, bass_mode
 from Translator_py_ly.translator import key_ly
-from Music_Theory.Chords import chord, interval
+from Music_Theory.Chords import chord
+from Music_Theory.Intervals import interval
 from Music_Theory.Scales_and_modes import M_scale, m_scale, key_scale, M_scale_intervals, m_scale_intervals, acc_notes
 from numpy import zeros, array, size, amax, argmax, delete, multiply
 import copy
@@ -17,10 +18,10 @@ def autobass(melody_py, reference, key_signature):
 
     finish_bass = [ "\n" + "}" + "}",
                    ">>"]
-                  
-    autobass = start_bass + bass_ly + finish_bass
 
-    return autobass
+    bass = start_bass + bass_ly +  finish_bass
+    
+    return bass
 
 def melody_bass_translate(melody_py, key):
 
