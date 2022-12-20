@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Adornments",
     "\\Automatic_bass",
-    "\\Decorators",
     "\\Music_Theory",
     "\\Translator_py_ly"
   ],
+  "SelectedNode": "\\Adornments\\adornments.py",
   "PreviewInSolutionExplorer": false
 }

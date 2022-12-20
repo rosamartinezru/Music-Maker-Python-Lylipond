@@ -1,6 +1,5 @@
 import subprocess
-from Translator_py_ly.translator import key_ly
-from Translator_py_ly.dictionaries_lily import pitchly, octaves
+from Translator_py_ly.dictionaries_lily import pitchly, octaves, key_ly
 
 def header(reference, key_signature):                     # Initial text of LilyPond coding, includes title, composer and instrument
 

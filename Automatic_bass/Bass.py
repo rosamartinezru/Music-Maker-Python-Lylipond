@@ -1,5 +1,4 @@
-from Translator_py_ly.dictionaries_lily import pitchly, rythm, rythm_special, octaves, acc_ly, mode_ly, bass_mode
-from Translator_py_ly.translator import key_ly
+from Translator_py_ly.dictionaries_lily import pitchly, rythm, rythm_special, octaves, acc_ly, mode_ly, bass_mode, key_ly
 from Music_Theory.Chords import chord
 from Music_Theory.Intervals import interval
 from Music_Theory.Scales_and_modes import M_scale, m_scale, key_scale, M_scale_intervals, m_scale_intervals, acc_notes
