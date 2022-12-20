@@ -18,12 +18,9 @@ def autobass(melody_py, reference, key_signature):
     finish_bass = [ "\n" + "}" + "}",
                    ">>"]
                   
-    with open("prueba.txt", "a") as f:
-        f.write('\n'.join(start_bass))
-        f.write('\n'.join(bass_ly))
-        f.write('\n'.join(finish_bass))
+    autobass = start_bass + bass_ly + finish_bass
 
-    return 
+    return autobass
 
 def melody_bass_translate(melody_py, key):
 

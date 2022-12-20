@@ -1,6 +1,6 @@
 import subprocess
 
-def compile_PDF():
+def compile_PDF(full_text):
 
     finish = ["\n >>",
               "\\layout {}",
@@ -8,9 +8,10 @@ def compile_PDF():
               "}"]
 
     with open("prueba.txt", "a") as f:
+        f.write('\n'.join(full_text))
         f.write('\n'.join(finish))
 
-    path_to_Lylipond = "C:\\Program Files (x86)\\LilyPond\\usr\\bin\\lilypond.exe"
-    path_to_file = "C:\\Users\\rosam\\OneDrive\\Escritorio\\MUSE-1.1\\Ampliación de Matemáticas -1\\Music-Maker\\prueba.txt"
+    path_to_Lylipond = "D:\\Program Files\\LilyPond\\usr\\bin\\lilypond.exe"
+    path_to_file = "D:\\Descargas\\Aeroespecial\\MUSE 1\\Matematicas\\Programacion\\Programas\\Music Maker\\prueba.txt"
     
     return subprocess.call([path_to_Lylipond,path_to_file])

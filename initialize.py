@@ -5,18 +5,16 @@ def initialize_sheet():                     # Initial text of LilyPond coding, i
     composer = input("Composer: ")
     instrument = input("Instrument: ")
 
-    initial = ["\\version \"2.22.2\" ", 
+    sheet_start = ["\\version \"2.22.2\" ", 
                "\\header {", 
                "title = \"" + title + "\"",
                "composer = \"" + composer + "\"",
                "}",
                "\\score {\\new PianoStaff \\with { instrumentName = \"" +instrument+ "\" }"]
 
-    with open("prueba.txt", "w") as f:
-        f.write('\n'.join(initial))
-    return
+    return sheet_start
 
-def start_sheet(reference, key_signature):          # Time signature, metronome and clef
+def melody_start(reference, key_signature):          # Time signature, metronome and clef
     time = input("Define a time signature (f.e. 3/4): ")
 
     figure, metronome = input("Define a metronome tempo (figure tempo): ").split()
@@ -32,7 +30,7 @@ def start_sheet(reference, key_signature):          # Time signature, metronome 
 
     oct = int(reference[1]) - 3
 
-    start = ["\n <<",
+    melody_start = ["\n <<",
              "\\new Staff \\relative " + pitchly[reference[0]] + octaves[oct] + "{",
              "\\clef " + clef,
              "\\key " + key_ly(key_signature)[0] + " \\" + key_ly(key_signature)[1],
@@ -40,7 +38,4 @@ def start_sheet(reference, key_signature):          # Time signature, metronome 
              "\\tempo " + figure + " = " + metronome,
              "\\partial " + time_anacruse + "\n"]
 
-    with open("prueba.txt", "a") as f:
-        f.write('\n'.join(start))
-
-    return
+    return melody_start
