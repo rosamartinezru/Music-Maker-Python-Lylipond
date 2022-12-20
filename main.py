@@ -18,6 +18,8 @@ key_signature = "AbM"
 melody = "R_ R- C- C_ C | C__. D- B-^ | B__ R- B_ A- | B_ B-A C_ E4- F-^ | F-C5 C-C C-C C_ | C__. D- B-^ | B__ R- B_ A- | B_ B B C- A-^ | A- F_. R__ | R__ R_ R- E5- | " \
             + "F_ F F-E F- E-^ | E_ B- C_ D_. | E_ E E-C E- C-^ | C_ F4- G_ A_. ||"
 
+# reference, key_signature, melody = GUI()
+
 sheet_start = initialize_sheet()
 
 melody_start = melody_start(reference, key_signature)
