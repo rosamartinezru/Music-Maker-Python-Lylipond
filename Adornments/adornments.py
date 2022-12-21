@@ -7,13 +7,14 @@ def adorn_all_octaves(melody_ly):
 
     decorated_melody = [str(" ")]*len(melody_ly)
 
-    for n in (range(len(melody_ly)-1)):
-
-        bar = melody_ly[n]                      # string en linea n(compas)
-
-        decorated_melody[n] = adorn_bar(bar)
-
-
+    #for n in range(len(melody_ly)):
+    print(melody_ly)
+        #bar = melody_ly[n]                      # string en linea n(compas)
+    bars = melody_ly.splitlines()
+    print(bars)
+    for n in range(len(bars)):
+        print("bar = " + bars[n])
+        decorated_melody[n] = adorn_bar(bars[n])
 
     return decorated_melody
 
@@ -29,27 +30,32 @@ def adorn_bar(bar):
             if bar[i] != " ":                   # detecta el primer caracter que no es un espacio
                 j = bar.find(" ",i,len(bar))    # CALCULAR posicion del siguiente espacio
                 note = bar[i:j]           # primera nota = cosas entre 2 espacios p.e cis'4
+                print("note = "+note)
 
-                if (note[0] == '~') or (note[0] == 'r') or (note[0] == "."):
+                if (note[0] == '~') or (note[0] == 'r') or (note[0] == "."):     # or (note == "\\n"):
                     octava = note
                 else:        
                     for m in note:  
                        if m == "'":
+                           print("a")
                            mPos = note.find("'")
                            octava = "<" + note[0:mPos+1] + " " + note[0:mPos+1] + " " + ">" + note[mPos+1:len(note)]
                            break
                        elif m == ",": 
+                           print("b")
                            mPos = note.find(",")
-                           octava = "<" + note[0:mPos+1] + " " + note[0:mPos]  + ">" + note[mPos+1:len(note)]
+                           octava = "<" + note[0:mPos+1] + " " + note[0:mPos] + "'"  + ">" + note[mPos+1:len(note)]
                            break
                        elif m.isdigit():
+                           print("c")
                            mPos = note.find(m)
                            note_clean = note[0:len(note)-1]
                            octava = "<" + note_clean[0:mPos] + " " + note_clean[0:mPos] + "'"  + ">" + note[mPos:len(note)]
                            break
                        else:
                            if m == note[-1]:
-                               octava = "<" + note + " " +  note[0] + "'" + ">"
+                               print("d")
+                               octava = "<" + note + " " +  note + "'" + ">"
                                break       # termina el bucle
 
                 i += len(note) 
