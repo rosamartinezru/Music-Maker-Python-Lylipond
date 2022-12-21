@@ -27,6 +27,6 @@ decorated_melody = adorn_all_octaves(melody_ly)
 
 bass = autobass(melody, reference, key_signature)
 
-full_txt_sheet = [sheet_start, melody_start, melody_ly, bass]
+full_txt_sheet = [sheet_start, melody_start, decorated_melody, bass]
 
 compile_PDF(full_txt_sheet)
